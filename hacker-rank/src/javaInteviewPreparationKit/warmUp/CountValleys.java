@@ -1,3 +1,5 @@
+package javaInteviewPreparationKit.warmUp;
+
 public class CountValleys {
 
   public static void main(String[] args) {
