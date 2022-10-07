@@ -1,4 +1,4 @@
-package javaInteviewPreparationKit.warmUp;
+package hackerRank.javaInteviewPreparationKit.warmUp;
 
 import java.util.ArrayList;
 import java.util.Arrays;

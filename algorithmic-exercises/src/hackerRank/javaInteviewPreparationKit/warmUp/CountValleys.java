@@ -1,4 +1,4 @@
-package javaInteviewPreparationKit.warmUp;
+package hackerRank.javaInteviewPreparationKit.warmUp;
 
 public class CountValleys {
 
