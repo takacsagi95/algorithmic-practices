@@ -1,6 +1,8 @@
 package codeWars;
 
 import java.util.ArrayList;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class SimplePigLatin {
   /*
@@ -24,11 +26,34 @@ public class SimplePigLatin {
     String[] words = str.split(" "); // split up at spaces
     for (int i = 0; i < words.length; i++) {
       if (words[i].length() <= 1) {
-        end += words[i];
-      } else {
-        end += words[i].substring(1) + words[i].substring(0, 1) + "ay ";
+        end += " " + words[i];
+      }
+      else if (0 < i && i < words.length){
+        end += " " + words[i].substring(1) + words[i].substring(0, 1) + "ay";
+      }
+      else {
+        end += words[i].substring(1) + words[i].substring(0, 1) + "ay";
       }
     }
     return end;
+  }
+
+  @Test
+  public void testPiglatinForSentenceThree(){
+    String sentenceThree = "This is my string";
+    Assertions.assertEquals("hisTay siay ymay tringsay", pigLatin(sentenceThree));
+  }
+  //assertEquals("", PigLatin.pigIt("Pig latin is cool"));
+
+  @Test
+  public void testPiglatinForSentenceOne(){
+    String sentenceSecond = "Pig latin is cool";
+    Assertions.assertEquals("igPay atinlay siay oolcay", pigLatin(sentenceSecond));
+  }
+
+  @Test
+  public void testPiglatinForSentenceTwo(){
+    String sentence = "Hello world !";
+    Assertions.assertEquals("elloHay orldway !", pigLatin(sentence));
   }
 }
