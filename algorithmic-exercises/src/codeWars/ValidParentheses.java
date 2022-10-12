@@ -21,6 +21,9 @@ public class ValidParentheses {
     int numOfOpening = 0;
     int numOfClosing = 0;
     for (int i = 0; i < parensArr.length; i++) {
+      if (numOfOpening < numOfClosing) {
+        return false;
+      }
       if (parensArr[i] == '('){
         numOfOpening += 1;
       } else if (parensArr[i] == ')') {
@@ -28,8 +31,6 @@ public class ValidParentheses {
       }
     }
     if (numOfClosing == numOfOpening) {
-      return true;
-    } else if (!parens.contains("(") && !parens.contains(")")) {
       return true;
     } else {
       return false;

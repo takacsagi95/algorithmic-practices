@@ -1,6 +1,5 @@
 package codeWars;
 
-import java.util.ArrayList;
 
 public class MultiplesOf3or5 {
 
@@ -11,7 +10,8 @@ public class MultiplesOf3or5 {
   passed in. Additionally, if the number is negative, return 0 (for languages that do have them).
    */
   public void main(String[] args) {
-    System.out.println(this.solution(10));
+    System.out.println(solution(10));
+    System.out.println(solution(25));
   }
 
   public int solution(int number) {
