@@ -25,15 +25,15 @@ public class CalculateStringRotation {
     // dog -> god : -1 } if i == length (adott szó) -> return -1;
     String first2 = "dog";
     String second2 = "god";
-    System.out.println(shiftedDiff(first, second));
-    System.out.println(shiftedDiff(second, first));
-    //System.out.println(shiftedDiff(first2, second2));
+    System.out.println(shiftedDiff(first, second) + "   2");
+    System.out.println(shiftedDiff(second, first) + "   4");
+    System.out.println(shiftedDiff(first2, second2) + "   -1");
     // moose -> Moose } -1
-    //System.out.println(shiftedDiff("moose", "Moose"));
+    System.out.println(shiftedDiff("moose", "Moose") + "   -1"); // In this case needed some fixing
     // isn't -> tisn } 2
-    //System.out.println(shiftedDiff("isn't", "'tisn"));
+    System.out.println(shiftedDiff("isn't", "'tisn") + "   2");
     // Esham -> Esham } 0
-    //System.out.println(shiftedDiff("Esham", "Esham"));
+    System.out.println(shiftedDiff("Esham", "Esham") + "   0");
 
   }
 

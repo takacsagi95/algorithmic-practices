@@ -6,11 +6,11 @@ package hackerRank.javaInteviewPreparationKit.warmUp;
 public class RepeatedString {
 
   public static void main(String[] args) {
-    // a 100000
+    // a 100000 // 100000
     // aab 882787
     // gfcaaaecbg 547602
     //
-    System.out.println(repeatedString("aba", 10));
+    System.out.println(repeatedString("aba", 10)); // 7
 
   }
 
@@ -22,21 +22,41 @@ public class RepeatedString {
     long repeats = 0;
     // 1. The repeated string should be built through an n long loop
     char[] sArray = s.toCharArray();
-    StringBuilder repeatedString = new StringBuilder();
-    while (n != repeatedString.length()){
+    StringBuilder repeatedStringB = new StringBuilder();
+    for (int j = 0; j <= n; j++) {
       for (int i = 0; i < s.length(); i++) {
         // build the new string with StringBuilder
-        repeatedString.append(sArray[i]);
+        repeatedStringB.append(sArray[i]);
       }
     }
+
+    System.out.println(repeatedStringB);
     // 2. Counting the "a"s in the repeated string
-    String newString = repeatedString.toString();
+    String newString = repeatedStringB.toString();
     for (int i = 0; i < newString.length(); i++) {
       if (newString.charAt(i) == 'a'){
         repeats++;
       }
     }
-    //System.out.println(repeatedString);
     return repeats;
+  }
+
+  static long repeatedStringMath(String s, long n){
+    long total_full_strings = n / s.length();
+    long remainder = n % s.length();
+    char[] c = s.toCharArray();
+    long count = 0;
+    for (int i = 0; i < s.length(); i++) {
+      if (c[i] == 'a'){
+        count ++;
+      }
+      count *= total_full_strings;
+    }
+    for (int i = 0; i < remainder; i++) {
+      if (c[i] == 'a'){
+        count++;
+      }
+    }
+    return count;
   }
 }

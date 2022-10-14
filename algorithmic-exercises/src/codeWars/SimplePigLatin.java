@@ -11,13 +11,13 @@ public class SimplePigLatin {
   public static void main(String[] args) {
     String sentence = "Hello world !";
     String sentenceSecond = "Pig latin is cool";
-    String sentenceThree = "This is my string";
+    String sentenceThree = "[]This is my string";
     //System.out.println(pigLatin(sentence));
-    System.out.println(pigLatin(sentence));
-    System.out.println(pigLatin(sentenceSecond));
-    System.out.println("igPay atinlay siay oolcay");
+    //System.out.println(pigLatin(sentence));
+    //System.out.println(pigLatin(sentenceSecond));
+    //System.out.println("igPay atinlay siay oolcay");
     System.out.println(pigLatin(sentenceThree));
-    System.out.println("hisTay siay ymay tringsay");
+    //System.out.println("hisTay siay ymay tringsay");
   }
 
   public static String pigLatin(String str){
@@ -32,10 +32,27 @@ public class SimplePigLatin {
         }
       }
       else if (0 < i && i < words.length){
-        end += " " + words[i].substring(1) + words[i].substring(0, 1) + "ay";
+        if (words[i].matches("[a-zA-Z]")) {
+          end += " " + words[i].substring(1) + words[i].substring(0, 1) + "ay";
+        } else {
+          String[] splitted = words[i].split("[a-zA-Z]");
+          for (String string : splitted
+          ) {
+            System.out.println(string);
+          };
+        }
       }
       else {
-        end += words[i].substring(1) + words[i].substring(0, 1) + "ay";
+        //end += words[i].substring(1) + words[i].substring(0, 1) + "ay";
+        if (words[i].matches("[a-zA-Z]")) {
+          end += " " + words[i].substring(1) + words[i].substring(0, 1) + "ay";
+        } else {
+          String[] splitted = words[i].split("[a-zA-Z]");
+          for (String string : splitted
+          ) {
+            System.out.println(string);
+          };
+        }
       }
     }
     return end;
@@ -43,7 +60,7 @@ public class SimplePigLatin {
 
   @Test
   public void testPiglatinForSentenceThree(){
-    String sentenceThree = "This is my string";
+    String sentenceThree = "[]This is my string";
     Assertions.assertEquals("hisTay siay ymay tringsay", pigLatin(sentenceThree));
   }
   //assertEquals("", PigLatin.pigIt("Pig latin is cool"));
@@ -60,3 +77,10 @@ public class SimplePigLatin {
     Assertions.assertEquals("elloHay orldway !", pigLatin(sentence));
   }
 }
+/*
+Some help notes:
+Use a character set: [a-zA-Z] matches one letter from A–Z in lowercase and uppercase.
+[a-zA-Z]+ matches one or more letters and ^[a-zA-Z]+$ matches only strings that consist of one or
+more letters only (^ and $ mark the begin and end of a string respectively).
+https://www.regular-expressions.info/unicode.html#prop
+ */
