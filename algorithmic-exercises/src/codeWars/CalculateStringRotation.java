@@ -19,26 +19,39 @@ public class CalculateStringRotation {
   "dog", "god" => -1
    */
   public static void main(String[] args) {
+    // coffee -> eecoff } 2; eecoff -> coffee 4
     String first = "coffee";
     String second = "eecoff";
+    // dog -> god : -1 } if i == length (adott szó) -> return -1;
     String first2 = "dog";
     String second2 = "god";
     System.out.println(shiftedDiff(first, second));
-    System.out.println(shiftedDiff(first2, second2));
-    System.out.println(shiftedDiff("moose", "Moose"));
+    System.out.println(shiftedDiff(second, first));
+    //System.out.println(shiftedDiff(first2, second2));
+    // moose -> Moose } -1
+    //System.out.println(shiftedDiff("moose", "Moose"));
+    // isn't -> tisn } 2
+    //System.out.println(shiftedDiff("isn't", "'tisn"));
+    // Esham -> Esham } 0
+    //System.out.println(shiftedDiff("Esham", "Esham"));
+
   }
 
   static int shiftedDiff(String first, String second) {
     int shift = 0;
     char[] firstChars = first.toCharArray();
     char[] secondChars = second.toCharArray();
-    for (int i = 0; i < second.length(); i++) {
-      if (firstChars[0] == secondChars[i]) {
-        shift = i;
-        return i;
+    for (int i = 0; i <= firstChars.length -1; i++) {
+      for (int j = 0; j <= secondChars.length -1; j++) {
+        if (firstChars[0] == secondChars[j]){
+          if (j == secondChars.length-1){
+            return -1;
+          }
+          return j;
+        }
       }
     }
-    return shift;
+    return 0;
   }
 
 }
