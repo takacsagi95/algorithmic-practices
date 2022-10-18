@@ -1,7 +1,6 @@
 package codeWars;
 
 public class CalculateStringRotation {
-
   /*
   Write a function that receives two strings and returns n, where n is equal to the number of
   characters we should shift the first string forward to match the second.
@@ -10,12 +9,11 @@ public class CalculateStringRotation {
   In this case, the first string has been rotated 5 characters forward to produce the second string,
   so 5 would be returned.
   If the second string isn't a valid rotation of the first string, the method returns -1.
-
   "coffee", "eecoff" => 2
   "eecoff", "coffee" => 4
-  "moose", "Moose" => -1
+  "moose", "Moose" => -1 // ez nem jó
   "isn't", "'tisn" => 2
-  "Esham", "Esham" => 0
+  "Esham", "Esham" => 0 // ez jó
   "dog", "god" => -1
    */
   public static void main(String[] args) {
@@ -34,7 +32,7 @@ public class CalculateStringRotation {
     System.out.println(shiftedDiff("isn't", "'tisn") + "   2");
     // Esham -> Esham } 0
     System.out.println(shiftedDiff("Esham", "Esham") + "   0");
-
+    System.out.println(shiftedDiff("hoop", "pooh") + "   -1");
   }
 
   static int shiftedDiff(String first, String second) {
@@ -47,11 +45,18 @@ public class CalculateStringRotation {
           if (j == secondChars.length-1){
             return -1;
           }
+          if ( 141 <= (int) firstChars[0] && (int) firstChars[0] <= 172 &&
+              65 <= (int) secondChars[j] && (int) secondChars[j] <= 132){
+            return -1;
+          }
+          if ( 65 <= (int) firstChars[0] && (int) firstChars[0] <= 132 &&
+              141 <= (int) secondChars[j] && (int) secondChars[j] <= 172){
+            return -1;
+          }
           return j;
         }
       }
     }
     return 0;
   }
-
 }

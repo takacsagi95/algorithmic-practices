@@ -31,6 +31,11 @@ public class SimplePigLatin {
           end += "ay";
         }
       }
+      // check that the word starts with non letter characters
+      // --> split down the non letters characters and do the char swap ups...
+      else if (words[i].equals("A")) {
+
+      }
       else if (0 < i && i < words.length){
         if (words[i].matches("[a-zA-Z]")) {
           end += " " + words[i].substring(1) + words[i].substring(0, 1) + "ay";
@@ -82,5 +87,6 @@ Some help notes:
 Use a character set: [a-zA-Z] matches one letter from A–Z in lowercase and uppercase.
 [a-zA-Z]+ matches one or more letters and ^[a-zA-Z]+$ matches only strings that consist of one or
 more letters only (^ and $ mark the begin and end of a string respectively).
+[^a-zA-Z0-9]  # NOT a-z, A-Z and 0-9
 https://www.regular-expressions.info/unicode.html#prop
  */
