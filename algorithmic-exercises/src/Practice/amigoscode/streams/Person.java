@@ -1,4 +1,4 @@
-package amigoscode.streams;
+package Practice.amigoscode.streams;
 
 public class Person {
 

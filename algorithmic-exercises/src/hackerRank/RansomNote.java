@@ -57,8 +57,8 @@ public class RansomNote {
     // Rules:
     // - the count number should stay equal or higher than 0.
     //    - if the count goes under zero -->
-    //            give back no, because every word should appear in the magazine with equal occurences
-    //            if there are negative number: this number of occurences can not come from this magazine
+    //            give back no, because every word should appear in the magazine with equal occurrences
+    //            if there are negative number: this number of occurrences can not come from this magazine
     //            --> return No
     // - if there is a word in the note list that does not appear in the magazine -->
     //            it can not come from this magazine --> Return No
@@ -76,7 +76,7 @@ public class RansomNote {
         return;
       }
     }
-//Anything else should give a Yes.
+  //Anything else should give a Yes.
     System.out.println("Yes");
   }
   // Help: https://medium.com/@fahdmoh.1/hackerrank-ransom-note-problem-solution-in-java-4f7d094d8f9b

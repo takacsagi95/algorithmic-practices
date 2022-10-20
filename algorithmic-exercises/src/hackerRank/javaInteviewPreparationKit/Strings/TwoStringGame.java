@@ -1,6 +1,6 @@
 package hackerRank.javaInteviewPreparationKit.Strings;
 
-import java.util.List;
+import java.util.HashMap;
 
 public class TwoStringGame {
 
@@ -49,19 +49,34 @@ public class TwoStringGame {
   c
    */
   public static void main(String[] args) {
+    long k = 2;
+    String a = "hello";
+    String b = "world";
+    System.out.println(twoStringsTerrible(k, a, b));
 
   }
 
   public static String twoStringsTerrible(long k, String a, String b) {
-    // Write your code here
-    for (int i = 0; i < a.length(); i++) {
-      for (int j = 0; j < b.length(); j++) {
-        if (a.charAt(i) == b.charAt(j)){
-          return "Yes";
+    // Count the matching substrings
+    // if it is equal to the input long --> yes, or: no
+    long count = 0;
+    char[] aArr = a.toCharArray();
+    char[] bArr = b.toCharArray();
+    HashMap<Character, Integer> table = new HashMap<>();
+    // eltárolom az egyiket, mondjuk az A-t egy hashmapbe számmal, ahányszor előfordul
+    // --> utána levonogatom az előfordulást
+    for (int i = 0; i < b.length(); i++) {
+      for (char ac : aArr) {
+        if (ac == bArr[i]) {
+          count += 1;
+
         }
       }
     }
-    return "No solution";
+    if (count == k) {
+      return "Yes";
+    }
+    return "No";
   }
 
 }
