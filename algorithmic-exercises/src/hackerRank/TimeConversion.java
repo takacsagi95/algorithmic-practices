@@ -31,12 +31,11 @@ public class TimeConversion {
     for (String str : sArr) {
       System.out.println(str);
     }
-    System.out.println();
     String amOrPm = sArr[2].substring(2);
+    StringBuilder sb = new StringBuilder();
     for (int i = 0; i < sArr.length; i++) {
       if (amOrPm.equals("AM")) {
         String converted = timesHM.get(sArr[0]);
-        StringBuilder sb = new StringBuilder();
         sb = sb.append(converted);
         sb = sb.append(":");
         sb = sb.append(sArr[1]);
@@ -44,14 +43,14 @@ public class TimeConversion {
         System.out.println(newTime);
 
       } else if (amOrPm.equals("PM")) {
-        StringBuilder sb = new StringBuilder();
         sb = sb.append(sArr[0]);
         sb = sb.append(":");
         sb = sb.append(sArr[1]);
-        String newTime = sb.toString();
-        System.out.println(newTime);
+
       }
     }
+    String newTime = sb.toString();
+    System.out.println(newTime);
   }
 
 }
