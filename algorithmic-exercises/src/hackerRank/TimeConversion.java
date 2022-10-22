@@ -1,18 +1,25 @@
 package hackerRank;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class TimeConversion {
 
   public static void main(String[] args) {
     String time = "07:05:45PM";
     String timeAM = "07:05:45AM";
+    String time2 = "03:48:50AM";
+    timeConversion(time);
     timeConversion(timeAM);
+    timeConversion(time2);
+    timeConversionSecond(time);
+    timeConversionSecond(timeAM);
+    timeConversionSecond(time2);
   }
 
   public static void timeConversion(String s) {
     String[] sArr = s.split(":");
-    HashMap<String, String> timesHM = new HashMap<>() {{
+    Map<String, String> timesHM = new HashMap<>() {{
       put("12", "00");
       put("11", "23");
       put("10", "22");
@@ -36,14 +43,14 @@ public class TimeConversion {
         sb.append(":");
         sb.append(sArr[1]);
         sb.append(":");
-        sb.append(sArr[2].substring(0,2));
+        sb.append(sArr[2].substring(0, 2));
         break;
       } else if (amOrPm.equals("PM")) {
         sb.append(sArr[0]);
         sb.append(":");
         sb.append(sArr[1]);
         sb.append(":");
-        sb.append(sArr[2].substring(0,2));
+        sb.append(sArr[2].substring(0, 2));
         break;
       }
     }
@@ -64,8 +71,18 @@ public class TimeConversion {
         sb.append(hourStr);
         sb.append(":");
         sb.append(sArr[1]);
+        sb.append(":");
+        sb.append(sArr[2].substring(0, 2));
+        System.out.println(sb.toString());
+        return;
       } else if (sArr[2].substring(2).equals("PM")) {
-
+        sb.append(sArr[0]);
+        sb.append(":");
+        sb.append(sArr[1]);
+        sb.append(":");
+        sb.append(sArr[2].substring(0, 2));
+        System.out.println(sb.toString());
+        return;
       }
     }
   }
