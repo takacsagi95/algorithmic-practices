@@ -39,4 +39,15 @@ public class StringArrayDuplicates {
     return rightStringList;
   }
 
+  // A clever solution from CodeWars solution list:
+  public static String[] dupOther(String[] arr){
+    for (int i = 0 ; i < arr.length ; i ++) {
+      StringBuilder sb = new StringBuilder();
+      for (int j = 0 ; j < arr[i].length()-1 ; j++) {
+        if (arr[i].charAt(j)!=arr[i].charAt(j+1)) sb.append(""+arr[i].charAt(j));
+      }
+      arr[i] =sb.toString() + arr[i].charAt(arr[i].length()-1);
+    }
+    return arr ;
+  }
 }
