@@ -1,3 +1,13 @@
+# My repo for learning to code different algorithms and learning some basics for Java programming
+
+- codeWars folder:
+  - Scripts in this folder: general practice based on GFA collection
+  - Interview preparation kit: interview preparation kit solutions
+- hackerRand folder:
+  - Scripts in this folder: general practice based on GFA collection
+  - Folders and scripts based on the hardness of the exercises
+- 
+
 HackerRank Interview Preparation Kit: https://www.hackerrank.com/interview/interview-preparation-kit
 
 Suggested problems to solve
