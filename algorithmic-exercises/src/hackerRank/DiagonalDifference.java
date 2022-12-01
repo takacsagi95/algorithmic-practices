@@ -12,7 +12,7 @@ public class DiagonalDifference {
         Arrays.asList(4, 5, 6),
         Arrays.asList(10, 8, -12)));
     // 15
-    //System.out.println(diagonalDifference(arr));
+    System.out.println(diagonalDifference(arr));
 
     List<List<Integer>> arr2 = new ArrayList<>(Arrays.asList(
         Arrays.asList(-1, 1, -7, -8),
@@ -25,27 +25,28 @@ public class DiagonalDifference {
 
   public static int diagonalDifference(List<List<Integer>> arr) {
     // Write your code here
-    int n = arr.size();
+    int len = arr.size();
     int sumLeftRight = 0;
     int sumRightLeft = 0;
 
     for (int i = 0; i < arr.size(); i++) {
       for (int j = 0; j < arr.size(); j++) {
         if (i == j) {
-          System.out.println("i == j  " + i);
-          System.out.println("temporary i   " + arr.get(i).get(j));
-          sumLeftRight += arr.get(i).get(j);
+          //System.out.println("i == j  " + i);
+          //System.out.println("temporary i   " + arr.get(i).get(j));
+          sumLeftRight += arr.get(i).get(j); // 0,0 1,1 2,2 3,3
         }
-        if (i == n - j - 1) {
-          System.out.println("n   " + n);
-          System.out.println("j   " + j);
-          System.out.println("i == n - j - 1  " + i);
-          System.out.println("temporary i   " + arr.get(i).get(j));
+        if (i == len - j - 1) {
+          // 0 = 4 - j - 1 ; 1 = 4 - j - 1 --> when az i=0 - j=3 or i=1 - j=3;  2 = 4 -2 -1;
+          //System.out.println("len   " + len);
+          //System.out.println("j   " + j);
+          //System.out.println("i == len - j - 1  " + i);
+          //System.out.println("temporary i   " + arr.get(i).get(j));
           sumRightLeft += arr.get(i).get(j);
         }
       }
     }
-    System.out.println("final result");
+    //System.out.println("final result");
     return Math.abs( sumLeftRight - sumRightLeft);
   }
 
